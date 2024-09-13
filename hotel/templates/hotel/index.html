@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Tiny Houses</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Some Tiny Houses</h1>
+        <nav>
+            <a href="{% url 'room_list' %}">Odalar</a>
+            <a href="#">Hakkımızda</a>
+            <a href="#">İletişim</a>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Hoşgeldiniz Some Tiny Houses!</h1>
+            <p>Şehirden uzak, huzurlu bir konaklama deneyimi sizi bekliyor.</p>
+            <a href="{% url 'room_list' %}" class="button">Odalarımızı Gör</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Some Tiny Houses. Tüm Hakları Saklıdır.</p>
+    </footer>
+</body>
+</html>

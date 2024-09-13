@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Some Tiny House Odaları</title>
+</head>
+<body>
+    <h1>Odalarımız</h1>
+    <ul>
+        {% for room in rooms %}
+            <li>{{ room.name }} - {{ room.room_type }} - {{ room.price_per_night }} TL</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
