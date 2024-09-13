@@ -12,6 +12,7 @@ class Room(models.Model):
     name = models.CharField(max_length=100)
     room_type = models.CharField(choices=ROOM_TYPES, max_length=50)
     price_per_night = models.DecimalField(max_digits=6, decimal_places=2)
+    photo = models.ImageField(upload_to='room_photos/', blank=True, null=True)  # Fotoğraf alanı eklendi
     availability = models.BooleanField(default=True)
     description = models.TextField()
 

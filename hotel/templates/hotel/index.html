@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Some Tiny Houses</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header>
-        <h1>Some Tiny Houses</h1>
+    <header class="hero-section">
+        <div class="overlay">
+            <h1>Some Tiny Houses</h1>
+        </div>
         <nav>
             <a href="{% url 'room_list' %}">Odalar</a>
             <a href="#">Hakkımızda</a>
