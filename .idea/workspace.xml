@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d764da6-d3b7-4426-a149-9e62178df870" name="Changes" comment="feat: upload">
+    <list default="true" id="2d764da6-d3b7-4426-a149-9e62178df870" name="Changes" comment="feat: some updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/static/images/some.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/some.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/someotelwebsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/someotelwebsite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/someotelwebsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/someotelwebsite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -53,23 +52,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.someotelwebsite.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.someotelwebsite.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Cevdet\Desktop\stajTechnArts\someotelwebsite" />
@@ -124,7 +123,11 @@
       <updated>1726213499914</updated>
       <workItem from="1726213508835" duration="4550000" />
       <workItem from="1726221535449" duration="2634000" />
-      <workItem from="1726224701458" duration="1003000" />
+      <workItem from="1726224701458" duration="2440000" />
+      <workItem from="1726257169095" duration="487000" />
+      <workItem from="1726302687314" duration="5579000" />
+      <workItem from="1726390426807" duration="6294000" />
+      <workItem from="1726472740057" duration="2414000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upload">
       <option name="closed" value="true" />
@@ -134,14 +137,34 @@
       <option name="project" value="LOCAL" />
       <updated>1726218077449</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: some updates">
+      <option name="closed" value="true" />
+      <created>1726226023378</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726226023378</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: upload" />
+    <MESSAGE value="feat: some updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: some updates" />
   </component>
 </project>

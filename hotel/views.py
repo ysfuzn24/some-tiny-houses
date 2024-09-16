@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Room
-from .forms import SignUpForm
+from .forms import SignUpForm, ReservationForm
 from django.contrib.auth import login
 
 # Create your views here.
@@ -22,3 +22,19 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
+
+
+def reservation_view(request):
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            reservation = form.save(commit=False)
+            reservation.user = request.user
+            reservation.save()
+            return redirect('reservation_success')
+    else:
+        form = ReservationForm()
+    return render(request, 'hotel/reservation.html', {'form': form})
+
+def reservation_success_view(request):
+    return render(request, 'hotel/reservation_success.html')

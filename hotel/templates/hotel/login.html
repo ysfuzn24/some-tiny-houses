@@ -1,0 +1,19 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Giriş Yap{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h1>Giriş Yap</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Kullanıcı Adı:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Şifre:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Giriş Yap</button>
+    </form>
+</div>
+{% endblock %}

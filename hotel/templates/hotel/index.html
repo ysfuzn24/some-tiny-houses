@@ -1,24 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Some Tiny Houses</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <header class="hero-section">
-        <div class="overlay">
-            <h1>Some Tiny Houses</h1>
-        </div>
-        <nav>
-            <a href="{% url 'room_list' %}">Odalar</a>
-            <a href="#">Hakkımızda</a>
-            <a href="#">İletişim</a>
-        </nav>
-    </header>
-    
+{% extends 'base_generic.html' %}
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
     <section class="hero">
         <div class="container">
             <h1>Hoşgeldiniz Some Tiny Houses!</h1>
@@ -26,9 +9,4 @@
             <a href="{% url 'room_list' %}" class="button">Odalarımızı Gör</a>
         </div>
     </section>
-
-    <footer>
-        <p>&copy; 2024 Some Tiny Houses. Tüm Hakları Saklıdır.</p>
-    </footer>
-</body>
-</html>
+{% endblock %}

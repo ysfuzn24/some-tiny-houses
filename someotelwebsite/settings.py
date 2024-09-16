@@ -56,7 +56,7 @@ ROOT_URLCONF = 'someotelwebsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': []
+        'DIRS': [BASE_DIR / 'hotel/templates/hotel']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -106,9 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/ISTANBUL'
 
 USE_I18N = True
 

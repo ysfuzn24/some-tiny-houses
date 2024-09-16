@@ -1,5 +1,4 @@
 /* style.css */
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -7,7 +6,7 @@ body {
 
 .hero-section {
     position: relative;
-    background-image: url('../images/hero-background.jpg'); /* Resim yolunu belirtin */
+    background-image: url('images/some.jpg'); /* Resim yolunu belirtin */
     background-size: cover;
     background-position: center;
     height: 100vh; /* Ekranın tamamını kaplar */
@@ -25,7 +24,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* %30 saydamlık */
+    background: rgba(0, 0, 0, 0.7); /* %70 saydamlık */
     display: flex;
     align-items: center;
     justify-content: center;
