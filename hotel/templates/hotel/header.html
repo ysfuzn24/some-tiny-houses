@@ -6,7 +6,13 @@
             <a href="{% url 'room_list' %}">Odalar</a>
             <a href="#">Hakkımızda</a>
             <a href="#">İletişim</a>
-            <a href="{% url 'login' %}">Giriş Yap</a>
-            <a href="{% url 'signup' %}">Kayıt Ol</a>
+            <a href="{% url 'reservation' %}">Rezervasyon Yap</a>
+            {% if request.user.is_authenticated %}
+            <p>Hoş geldin, {{ request.user.username }}!</p>
+                    <a href="{% url 'logout' %}">Çıkış yap</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Giriş yap</a>
+                    <a href="{% url 'signup' %}">Kayıt ol</a>
+                {% endif %}
         </nav>
     </header>

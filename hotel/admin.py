@@ -12,4 +12,4 @@ class RoomAdmin(admin.ModelAdmin):
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('user', 'room', 'check_in', 'check_out', 'guests')
+    list_display = ('user', 'room', 'check_in', 'check_out', 'guests', 'Ozel_istek')

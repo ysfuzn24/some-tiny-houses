@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d764da6-d3b7-4426-a149-9e62178df870" name="Changes" comment="feat: some updates">
+    <list default="true" id="2d764da6-d3b7-4426-a149-9e62178df870" name="Changes" comment="feat: some updates and uploads">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/base_generic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/reservation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/someotelwebsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/someotelwebsite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/someotelwebsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/someotelwebsite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +127,10 @@
       <workItem from="1726257169095" duration="487000" />
       <workItem from="1726302687314" duration="5579000" />
       <workItem from="1726390426807" duration="6294000" />
-      <workItem from="1726472740057" duration="2414000" />
+      <workItem from="1726472740057" duration="4282000" />
+      <workItem from="1726477660657" duration="163000" />
+      <workItem from="1726480635683" duration="51000" />
+      <workItem from="1726481730001" duration="3931000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upload">
       <option name="closed" value="true" />
@@ -145,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726226023378</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: some updates and uploads">
+      <option name="closed" value="true" />
+      <created>1726475257095</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726475257095</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +176,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: upload" />
     <MESSAGE value="feat: some updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: some updates" />
+    <MESSAGE value="feat: some updates and uploads" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: some updates and uploads" />
   </component>
 </project>

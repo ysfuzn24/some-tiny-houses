@@ -7,17 +7,12 @@
     <h1>Rezervasyon Yap</h1>
     <form method="post">
         {% csrf_token %}
+        {{ form.as_p }}
         <label for="name">Ad Soyad:</label>
         <input type="text" id="name" name="name" required>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-
-        <label for="check_in">Giriş Tarihi:</label>
-        <input type="date" id="check_in" name="check_in" required>
-
-        <label for="check_out">Çıkış Tarihi:</label>
-        <input type="date" id="check_out" name="check_out" required>
 
         <button type="submit">Rezervasyon Yap</button>
     </form>

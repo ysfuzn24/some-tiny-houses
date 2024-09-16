@@ -30,6 +30,7 @@ def reservation_view(request):
         if form.is_valid():
             reservation = form.save(commit=False)
             reservation.user = request.user
+            reservation.room = form.cleaned_data['room']
             reservation.save()
             return redirect('reservation_success')
     else:

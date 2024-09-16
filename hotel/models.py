@@ -27,7 +27,7 @@ class Reservation(models.Model):
     check_in = models.DateField()
     check_out = models.DateField()
     guests = models.IntegerField()
-    Ozel_istek = models.TextField()
+    Ozel_istek = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f"Reservation by {self.user.username} for {self.room.name}"

@@ -2,7 +2,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Reservation
+from .models import Reservation, Room
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -13,6 +13,7 @@ class SignUpForm(UserCreationForm):
 
 
 class ReservationForm(forms.ModelForm):
+    room= forms.ModelChoiceField(queryset=Room.objects.all(), empty_label="Select a room" )
     class Meta:
         model = Reservation
         fields = ['room', 'check_in', 'check_out', 'guests', 'Ozel_istek']
