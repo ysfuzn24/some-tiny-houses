@@ -2,6 +2,9 @@ from django.shortcuts import render,redirect
 from .models import Room
 from .forms import SignUpForm, ReservationForm
 from django.contrib.auth import login
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 # Create your views here.
 
@@ -24,6 +27,9 @@ def signup(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 def reservation_view(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
@@ -32,6 +38,21 @@ def reservation_view(request):
             reservation.user = request.user
             reservation.room = form.cleaned_data['room']
             reservation.save()
+
+            # Debug bilgilerinin yazdırılması
+            print(settings.EMAIL_HOST_USER)
+            print(reservation.user)
+            print(reservation.user.email)
+
+            # E-posta gönderimi
+            send_mail(
+                'Rezervasyon Başarılı!',
+                f'Değerli {reservation.user.username},\n\nRezervasyonunuz başarıyla alınmıştır. Sizi {reservation.check_in} - {reservation.check_out} tarihleri arasında otelimizde ağırlamaktan büyük keyif duyacağız!\n\nSaygılarımızla,\nSome Tiny Houses Ekibi',
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[reservation.user.email],
+                fail_silently=False,
+            )
+
             return redirect('reservation_success')
     else:
         form = ReservationForm()

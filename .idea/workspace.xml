@@ -7,12 +7,11 @@
     <list default="true" id="2d764da6-d3b7-4426-a149-9e62178df870" name="Changes" comment="feat: some updates and uploads">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/base_generic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/reservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/room_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/room_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/someotelwebsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/someotelwebsite/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/someotelwebsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/someotelwebsite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +19,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -61,6 +64,7 @@
     &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -130,7 +134,13 @@
       <workItem from="1726472740057" duration="4282000" />
       <workItem from="1726477660657" duration="163000" />
       <workItem from="1726480635683" duration="51000" />
-      <workItem from="1726481730001" duration="3931000" />
+      <workItem from="1726481730001" duration="3999000" />
+      <workItem from="1726558133903" duration="3883000" />
+      <workItem from="1726563071237" duration="7153000" />
+      <workItem from="1726578831264" duration="2433000" />
+      <workItem from="1726581298916" duration="17000" />
+      <workItem from="1726644983785" duration="4865000" />
+      <workItem from="1726657543675" duration="293000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upload">
       <option name="closed" value="true" />
@@ -156,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726475257095</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: some updates and uploads">
+      <option name="closed" value="true" />
+      <created>1726485836351</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726485836351</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
