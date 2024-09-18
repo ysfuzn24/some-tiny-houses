@@ -1,0 +1,35 @@
+<!-- templates/hotel/contact.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>İletişim</h1>
+    {% if contact_info %}
+        <div class="contact-info">
+            <p><strong>Adres:</strong> {{ contact_info.address }}</p>
+            <p><strong>Telefon:</strong> {{ contact_info.phone_number }}</p>
+            <p><strong>Email:</strong> {{ contact_info.email }}</p>
+            {% if contact_info.location_lat and contact_info.location_lng %}
+                <div id="map" style="height: 500px; width: 100%;"></div>
+                <!-- Leaflet CSS -->
+                <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+                <!-- Leaflet JS -->
+                <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var map = L.map('map').setView([{{ contact_info.location_lat }}, {{ contact_info.location_lng }}], 15);
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(map);
+
+                        L.marker([{{ contact_info.location_lat }}, {{ contact_info.location_lng }}]).addTo(map)
+                            .bindPopup('{{ contact_info.address }}')
+                            .openPopup();
+                    });
+                </script>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>İletişim bilgileri bulunamadı.</p>
+    {% endif %}
+{% endblock %}

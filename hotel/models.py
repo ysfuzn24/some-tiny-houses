@@ -48,3 +48,15 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f"Reservation by {self.user.username} for {self.room.name}"
+
+
+class ContactInfo(models.Model):
+    address = models.TextField()
+    phone_number = models.CharField(max_length=15)
+    email = models.EmailField()
+    location_lat = models.FloatField(blank=True, null=True)  # Konumun enlem değeri
+    location_lng = models.FloatField(blank=True, null=True)  # Konumun boylam değeri
+
+    def __str__(self):
+        return f"Contact Info - {self.email}"
+#36.25544899903329, 36.17665957222116

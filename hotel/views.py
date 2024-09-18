@@ -1,5 +1,5 @@
-from django.shortcuts import render,redirect
-from .models import Room
+from django.shortcuts import render,redirect, get_object_or_404
+from .models import Room,ContactInfo
 from .forms import SignUpForm, ReservationForm
 from django.contrib.auth import login
 from django.core.mail import send_mail
@@ -10,7 +10,7 @@ from django.conf import settings
 
 def room_list(request):
     rooms = Room.objects.all()
-    return render(request, 'hotel/room_list.html', {'rooms': rooms })
+    return render(request, 'hotel/rooms.html', {'rooms': rooms })
 
 def index(request):
     return render(request, 'hotel/index.html')
@@ -30,7 +30,8 @@ def signup(request):
 from django.core.mail import send_mail
 from django.conf import settings
 
-def reservation_view(request):
+def reservation_view(request, room_id):
+    room = get_object_or_404(Room, id=room_id)
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
@@ -60,3 +61,9 @@ def reservation_view(request):
 
 def reservation_success_view(request):
     return render(request, 'hotel/reservation_success.html')
+
+#iletisim bilgileri
+
+def contact_view(request):
+    contact_info = ContactInfo.objects.first()  # İlk iletişim bilgilerini al
+    return render(request, 'hotel/contact.html', {'contact_info': contact_info})

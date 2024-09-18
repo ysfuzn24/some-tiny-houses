@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odalar</title>
+    <link rel="stylesheet" href="{% static 'rooms.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Otelimizdeki Odalar</h1>
+    </header>
+    <main>
+        <section class="room-gallery">
+            {% for room in rooms %}
+                <div class="room-card">
+                    <img src="{{ room.photo.url }}" alt="{{ room.name }}" class="room-photo">
+                    <div class="room-details">
+                        <h2>{{ room.name }}</h2>
+                        <p><strong>Tür:</strong> {{ room.room_type }}</p>
+                        <p><strong>Fiyat:</strong> {{ room.price_per_night }} TL/gece</p>
+                        <p><strong>Açıklama:</strong> {{ room.description }}</p>
+                        <p><strong>Miktar:</strong> {{ room.quantity }}</p>
+                        <a href="{% url 'reservation' room.id %}" class="reserve-button">Rezervasyon Yap</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Otelimiz. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>

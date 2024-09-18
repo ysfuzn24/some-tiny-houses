@@ -5,7 +5,7 @@
         <nav>
             <a href="{% url 'room_list' %}">Odalar</a>
             <a href="#">Hakkımızda</a>
-            <a href="#">İletişim</a>
+            <a href="contact">İletişim</a>
             <a href="{% url 'reservation' %}">Rezervasyon Yap</a>
             {% if request.user.is_authenticated %}
             <p>Hoş geldin, {{ request.user.username }}!</p>

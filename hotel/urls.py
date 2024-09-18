@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import room_list, index, signup
+from .views import room_list, index, signup, contact_view
 
 urlpatterns = [
     path('', index, name='index'),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('signup/',signup, name='signup'),
     path('reservation/<int:room_id>/', views.reservation_view, name='reservation'),
     path('reservation/success/', views.reservation_success_view, name='reservation_success'),
+    path('contact/', contact_view, name='contact'),
 ]

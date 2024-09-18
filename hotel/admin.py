@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Room, Reservation
+from .models import Room, Reservation, ContactInfo
 
 class RoomAdmin(admin.ModelAdmin):
     list_display = ('name', 'room_type', 'price_per_night', 'photo', 'quantity', 'description')  # Fotoğrafı ve açıklamayı listeye ekleyin
@@ -11,3 +11,7 @@ admin.site.register(Room, RoomAdmin)
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ('user', 'room', 'check_in', 'check_out', 'guests', 'Ozel_istek')  # Rezervasyon detaylarını listeye ekleyin
+
+@admin.register(ContactInfo)
+class ContactInfoAdmin(admin.ModelAdmin):
+    list_display = ('email', 'phone_number', 'address')
