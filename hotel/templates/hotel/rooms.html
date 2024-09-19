@@ -4,13 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odalar</title>
+    <title>Odalar ve Rezervasyon</title>
     <link rel="stylesheet" href="{% static 'rooms.css' %}">
 </head>
 
 <body>
     <header>
-        <h1>Otelimizdeki Odalar</h1>
+        <h1>Odalar ve Rezervasyon</h1>
+        {% if request.user.is_authenticated %}
+            <p>Hoş geldin, {{ request.user.username }}!</p>
+                    <a href="{% url 'logout' %}">Çıkış yap</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Giriş yap</a>
+                    <a href="{% url 'signup' %}">Kayıt ol</a>
+                {% endif %}
     </header>
     <main>
         <section class="room-gallery">
@@ -22,7 +29,7 @@
                         <p><strong>Tür:</strong> {{ room.room_type }}</p>
                         <p><strong>Fiyat:</strong> {{ room.price_per_night }} TL/gece</p>
                         <p><strong>Açıklama:</strong> {{ room.description }}</p>
-                        <p><strong>Miktar:</strong> {{ room.quantity }}</p>
+                        <p><strong>Boş Oda:</strong> {{ room.quantity }}</p>
                         <a href="{% url 'reservation' room.id %}" class="reserve-button">Rezervasyon Yap</a>
                     </div>
                 </div>

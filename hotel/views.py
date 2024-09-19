@@ -1,16 +1,15 @@
-from django.shortcuts import render,redirect, get_object_or_404
-from .models import Room,ContactInfo
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Room, ContactInfo, Reservation
 from .forms import SignUpForm, ReservationForm
 from django.contrib.auth import login
 from django.core.mail import send_mail
 from django.conf import settings
 
-
 # Create your views here.
 
 def room_list(request):
     rooms = Room.objects.all()
-    return render(request, 'hotel/rooms.html', {'rooms': rooms })
+    return render(request, 'hotel/rooms.html', {'rooms': rooms})
 
 def index(request):
     return render(request, 'hotel/index.html')
@@ -26,18 +25,21 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
 
-
-from django.core.mail import send_mail
-from django.conf import settings
-
 def reservation_view(request, room_id):
     room = get_object_or_404(Room, id=room_id)
+    print(room)
     if request.method == 'POST':
+        #test_room=request.POST.get('room')
+        #print("test_room:",test_room)
+        print("reqıuest.POST:",request.POST)
         form = ReservationForm(request.POST)
         if form.is_valid():
+            cleaned_data = form.cleaned_data
+            print("cleaned data: ",cleaned_data)
             reservation = form.save(commit=False)
             reservation.user = request.user
-            reservation.room = form.cleaned_data['room']
+            reservation.room = room
+            print("reservation:", reservation)
             reservation.save()
 
             # Debug bilgilerinin yazdırılması
@@ -57,12 +59,12 @@ def reservation_view(request, room_id):
             return redirect('reservation_success')
     else:
         form = ReservationForm()
-    return render(request, 'hotel/reservation.html', {'form': form})
+    return render(request, 'hotel/reservation.html', {'form': form, 'room': room})
 
 def reservation_success_view(request):
     return render(request, 'hotel/reservation_success.html')
 
-#iletisim bilgileri
+# İletişim bilgileri
 
 def contact_view(request):
     contact_info = ContactInfo.objects.first()  # İlk iletişim bilgilerini al

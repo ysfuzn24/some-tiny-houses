@@ -14,4 +14,5 @@ class ReservationAdmin(admin.ModelAdmin):
 
 @admin.register(ContactInfo)
 class ContactInfoAdmin(admin.ModelAdmin):
-    list_display = ('email', 'phone_number', 'address')
+    list_display = ('email', 'phone_number', 'address', 'location_lat', 'location_lng')  # Enlem ve boylamı listeye ekleyin
+    fields = ('email', 'phone_number', 'address', 'location_lat', 'location_lng')  # Enlem ve boylam düzenlenebilir olsun

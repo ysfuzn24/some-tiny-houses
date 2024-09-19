@@ -1,15 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-# Create your models here.
 
 class Room(models.Model):
     ROOM_TYPES = [
-        ('Deluxe', 'Deluxe Bahceli Oda'),
+        ('Deluxe', 'Deluxe Bahçeli Oda'),
         ('Standard', 'Standart Oda'),
         ('Suite', 'Suite Oda'),
-        ('Deluxe cift', 'Deluxe Bahceli Cift Kisilik Oda'),
-        ('Standard cift ', 'Standart Cift Kisilik Oda'),
+        ('Deluxe cift', 'Deluxe Bahçeli Çift Kişilik Oda'),
+        ('Standard cift', 'Standart Çift Kişilik Oda'),
     ]
 
     name = models.CharField(max_length=100)
@@ -17,7 +16,8 @@ class Room(models.Model):
     price_per_night = models.DecimalField(max_digits=6, decimal_places=2)
     photo = models.ImageField(upload_to='room_photos/', blank=True, null=True)  # Fotoğraf alanı eklendi
     description = models.TextField()
-    quantity = models.PositiveIntegerField(default=1) #Oda sayısı
+    quantity = models.PositiveIntegerField(default=1)  # Oda sayısı
+
     def is_available(self, check_in, check_out):
         overlapping_reservations = Reservation.objects.filter(
             room=self,
@@ -38,17 +38,18 @@ class Reservation(models.Model):
     Ozel_istek = models.TextField(null=True, blank=True)
 
     def clean(self):
+        # Giriş ve çıkış tarihlerini kontrol et
         if self.check_out <= self.check_in:
             raise ValidationError("Çıkış tarihi, giriş tarihinden sonra olmalıdır.")
-
-    def clean(self):
         # Oda müsaitliğini kontrol et
-        if not self.room.is_available(self.check_in, self.check_out):
-            raise ValidationError(f"Seçtiğiniz tarihlerde {self.room.name} odasından boş yer kalmamıştır.")
-
+        try:
+            if self.room:
+                if not self.room.is_available(self.check_in, self.check_out):
+                    raise ValidationError(f"Seçtiğiniz tarihlerde {self.room.name} odasından boş yer kalmamıştır.")
+        except:
+            print("hata")
     def __str__(self):
-        return f"Reservation by {self.user.username} for {self.room.name}"
-
+        return f"Rezervasyon {self.room.name} - {self.check_in} to {self.check_out}"
 
 class ContactInfo(models.Model):
     address = models.TextField()
@@ -59,4 +60,3 @@ class ContactInfo(models.Model):
 
     def __str__(self):
         return f"Contact Info - {self.email}"
-#36.25544899903329, 36.17665957222116

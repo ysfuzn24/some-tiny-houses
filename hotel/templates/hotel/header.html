@@ -1,15 +1,18 @@
- <header class="hero-section">
+<header class="hero-section">
         <div class="overlay">
             <h1>Some Tiny Houses</h1>
         </div>
         <nav>
-            <a href="{% url 'room_list' %}">Odalar</a>
+            <a href="{% url 'room_list' %}">Odalar ve Rezervasyon</a>
             <a href="#">Hakkımızda</a>
             <a href="contact">İletişim</a>
-            <a href="{% url 'reservation' %}">Rezervasyon Yap</a>
+
             {% if request.user.is_authenticated %}
             <p>Hoş geldin, {{ request.user.username }}!</p>
-                    <a href="{% url 'logout' %}">Çıkış yap</a>
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit"> Çıkış Yap</button>
+                    </form>
                 {% else %}
                     <a href="{% url 'login' %}">Giriş yap</a>
                     <a href="{% url 'signup' %}">Kayıt ol</a>
