@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Room, ContactInfo, Reservation
 from .forms import SignUpForm, ReservationForm
@@ -6,13 +7,16 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 # Create your views here.
-
+@login_required(login_url='/login/')
 def room_list(request):
     rooms = Room.objects.all()
     return render(request, 'hotel/rooms.html', {'rooms': rooms})
 
 def index(request):
     return render(request, 'hotel/index.html')
+
+def about_us(request):
+    return render(request, 'hotel/about_us.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -31,15 +35,17 @@ def reservation_view(request, room_id):
     if request.method == 'POST':
         #test_room=request.POST.get('room')
         #print("test_room:",test_room)
-        print("reqıuest.POST:",request.POST)
+        print("request.POST:",request.POST)
         form = ReservationForm(request.POST)
         if form.is_valid():
             cleaned_data = form.cleaned_data
             print("cleaned data: ",cleaned_data)
+
             reservation = form.save(commit=False)
             reservation.user = request.user
             reservation.room = room
             print("reservation:", reservation)
+
             reservation.save()
 
             # Debug bilgilerinin yazdırılması
@@ -59,6 +65,7 @@ def reservation_view(request, room_id):
             return redirect('reservation_success')
     else:
         form = ReservationForm()
+        #hata mesajı eklenecek
     return render(request, 'hotel/reservation.html', {'form': form, 'room': room})
 
 def reservation_success_view(request):

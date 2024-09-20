@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d764da6-d3b7-4426-a149-9e62178df870" name="Changes" comment="feat: Added new features and made final updates">
+    <list default="true" id="2d764da6-d3b7-4426-a149-9e62178df870" name="Changes" comment="feat: Added new features">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/base_generic.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/reservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/login.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/rooms.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/rooms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rooms.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/rooms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/someotelwebsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/someotelwebsite/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +147,10 @@
       <workItem from="1726731358272" duration="4558000" />
       <workItem from="1726741217867" duration="2817000" />
       <workItem from="1726744077034" duration="1931000" />
-      <workItem from="1726746610680" duration="2541000" />
+      <workItem from="1726746610680" duration="4827000" />
+      <workItem from="1726752466334" duration="976000" />
+      <workItem from="1726767554298" duration="6101000" />
+      <workItem from="1726817190904" duration="5580000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upload">
       <option name="closed" value="true" />
@@ -199,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726663802049</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: Added new features">
+      <option name="closed" value="true" />
+      <created>1726750043004</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726750043004</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +230,7 @@
     <MESSAGE value="feat: some updates and uploads" />
     <MESSAGE value="feat: some updates" />
     <MESSAGE value="feat: Added new features and made final updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added new features and made final updates" />
+    <MESSAGE value="feat: Added new features" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added new features" />
   </component>
 </project>

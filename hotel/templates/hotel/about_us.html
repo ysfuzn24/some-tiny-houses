@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odalar ve Rezervasyon</title>
+    <link rel="stylesheet" href="{% static 'about_us.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Hakkımızda</h1>
+        {% if request.user.is_authenticated %}
+            <p>Hoş geldin, {{ request.user.username }}!</p>
+                    <a href="{% url 'index' %}">Anasayfa</a>
+                    <a href="{% url 'logout' %}">Çıkış yap</a>
+                {% else %}
+                    <a href="{% url 'index' %}">Anasayfa</a>
+                    <a href="{% url 'login' %}">Giriş yap</a>
+                    <a href="{% url 'signup' %}">Kayıt ol</a>
+                {% endif %}
+    </header>
+    <main>
+        <section id="about-us" style="text-align: center; padding: 50px; background-color: #f9f9f9;">
+    <h2>Biz Kimiz?</h2>
+    <p style="font-size: 18px; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+        Some Tiny Houses Boutique Hotel Konaklama, Antakya'nın kalbinde, ahşabın doğasını ve modern konforu bir araya getiren özel bir kaçış noktasıdır. Misafirlerimize doğal, huzurlu ve kaliteli bir konaklama deneyimi sunmayı hedefliyoruz. Her biri özenle tasarlanmış küçük ahşap evlerimizde, konforu, hijyeni ve doğallığı bir arada bulabilirsiniz. Amacımız, misafirlerimize unutulmaz anılar biriktirecekleri, huzur dolu bir tatil yaşatmaktır.
+
+​
+
+Kahvaltı salonumuzda her sabah taze ürünlerle hazırlanan kahvaltı tabağımızla güne enerjik bir başlangıç yapabilirsiniz. Bahçeli deluxe odalarımız, aile odalarımız ve mutfaklı süit odamız ile misafirlerimizin farklı ihtiyaçlarına cevap verecek çeşitli konaklama seçenekleri sunuyoruz. Otelimizde hijyen ve kalite standartlarına büyük önem veriyor, misafirlerimizin güvenliği ve rahatlığı için her detayı titizlikle düşünüyoruz.
+    </p>
+</section>
+    </main>
+    <footer>
+        <p>© 2024 Otelimiz. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>

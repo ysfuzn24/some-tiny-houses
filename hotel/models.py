@@ -38,6 +38,8 @@ class Reservation(models.Model):
     Ozel_istek = models.TextField(null=True, blank=True)
 
     def clean(self):
+
+        print("Hello")
         # Giriş ve çıkış tarihlerini kontrol et
         if self.check_out <= self.check_in:
             raise ValidationError("Çıkış tarihi, giriş tarihinden sonra olmalıdır.")
@@ -46,8 +48,12 @@ class Reservation(models.Model):
             if self.room:
                 if not self.room.is_available(self.check_in, self.check_out):
                     raise ValidationError(f"Seçtiğiniz tarihlerde {self.room.name} odasından boş yer kalmamıştır.")
-        except:
-            print("hata")
+        except ValidationError as e:
+            print(f"ValidationError: {e}")
+        except Room.DoesNotExist:
+            print("Room not found!")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
     def __str__(self):
         return f"Rezervasyon {self.room.name} - {self.check_in} to {self.check_out}"
 

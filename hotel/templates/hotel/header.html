@@ -3,19 +3,21 @@
             <h1>Some Tiny Houses</h1>
         </div>
         <nav>
-            <a href="{% url 'room_list' %}">Odalar ve Rezervasyon</a>
-            <a href="#">Hakkımızda</a>
-            <a href="contact">İletişim</a>
+        <a href="{% url 'room_list' %}">Odalar ve Rezervasyon</a>
+        <a href="{% url 'about_us' %}">Hakkımızda</a>
+        <a href="{% url 'contact' %}">İletişim</a>
 
-            {% if request.user.is_authenticated %}
-            <p>Hoş geldin, {{ request.user.username }}!</p>
-                    <form action="{% url 'logout' %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit"> Çıkış Yap</button>
-                    </form>
-                {% else %}
-                    <a href="{% url 'login' %}">Giriş yap</a>
-                    <a href="{% url 'signup' %}">Kayıt ol</a>
-                {% endif %}
-        </nav>
+        {% if request.user.is_authenticated %}
+        <a>Hoş geldin, {{ request.user.username}}!</a>
+            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Çıkış Yap
+            </a>
+            <form id="logout-form" action="{% url 'logout' %}" method="post" style="display:none;">
+                {% csrf_token %}
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}">Giriş yap</a>
+            <a href="{% url 'signup' %}">Kayıt ol</a>
+        {% endif %}
+    </nav>
     </header>
