@@ -32,40 +32,42 @@ def signup(request):
 def reservation_view(request, room_id):
     room = get_object_or_404(Room, id=room_id)
     print(room)
+
     if request.method == 'POST':
-        #test_room=request.POST.get('room')
-        #print("test_room:",test_room)
         print("request.POST:",request.POST)
         form = ReservationForm(request.POST)
+
         if form.is_valid():
-            cleaned_data = form.cleaned_data
-            print("cleaned data: ",cleaned_data)
+            check_in = form.cleaned_data['check_in']
+            check_out = form.cleaned_data['check_out']
 
-            reservation = form.save(commit=False)
-            reservation.user = request.user
-            reservation.room = room
-            print("reservation:", reservation)
+            if room.is_available(check_in, check_out) > 0:
+                reservation = form.save(commit=False)
+                reservation.user = request.user
+                reservation.room = room
+                reservation.save()
 
-            reservation.save()
+                # Debug bilgilerinin yazdırılması
+                print(settings.EMAIL_HOST_USER)
+                print(reservation.user)
+                print(reservation.user.email)
 
-            # Debug bilgilerinin yazdırılması
-            print(settings.EMAIL_HOST_USER)
-            print(reservation.user)
-            print(reservation.user.email)
+                # E-posta gönderimi
+                send_mail(
+                    'Rezervasyon Başarılı!',
+                    f'Değerli {reservation.user.username},\n\nRezervasyonunuz başarıyla alınmıştır. Sizi {reservation.check_in} - {reservation.check_out} tarihleri arasında otelimizde ağırlamaktan büyük keyif duyacağız!\n\nSaygılarımızla,\nSome Tiny Houses Ekibi',
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[reservation.user.email],
+                    fail_silently=False,
+                )
 
-            # E-posta gönderimi
-            send_mail(
-                'Rezervasyon Başarılı!',
-                f'Değerli {reservation.user.username},\n\nRezervasyonunuz başarıyla alınmıştır. Sizi {reservation.check_in} - {reservation.check_out} tarihleri arasında otelimizde ağırlamaktan büyük keyif duyacağız!\n\nSaygılarımızla,\nSome Tiny Houses Ekibi',
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[reservation.user.email],
-                fail_silently=False,
-            )
+                return redirect('reservation_success')
 
-            return redirect('reservation_success')
+            else:
+                form.add_error(None, "Bu tarihler için oda müsait değil.")
     else:
         form = ReservationForm()
-        #hata mesajı eklenecek
+
     return render(request, 'hotel/reservation.html', {'form': form, 'room': room})
 
 def reservation_success_view(request):

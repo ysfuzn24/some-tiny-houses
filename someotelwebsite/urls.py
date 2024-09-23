@@ -11,10 +11,7 @@ urlpatterns = [
     path('', include('hotel.urls')),
     path('accounts/', include('django.contrib.auth.urls')),  # Kullanıcı işlemleri için
     path('login/', auth_views.LoginView.as_view(), name='login'),
-
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('reservation/', views.reservation_view, name='reservation'),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

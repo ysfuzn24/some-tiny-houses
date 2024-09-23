@@ -15,7 +15,7 @@ class ReservationForm(forms.ModelForm):
 
     class Meta:
         model = Reservation
-        fields = ['check_in', 'check_out', 'guests', 'Ozel_istek']
+        fields = ['check_in', 'check_out', 'guests', 'special_requests']
         widgets = {
             'check_in': forms.DateInput(attrs={'type': 'date'}),
             'check_out': forms.DateInput(attrs={'type': 'date'}),
