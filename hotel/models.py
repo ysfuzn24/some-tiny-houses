@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.exceptions import ValidationError
+
 
 class Room(models.Model):
     ROOM_TYPES = [
@@ -17,49 +17,22 @@ class Room(models.Model):
     photo = models.ImageField(upload_to='room_photos/', blank=True, null=True)
     description = models.TextField()
     quantity = models.PositiveIntegerField(default=1)  # Toplam oda sayısı
+    max_occupancy=models.PositiveIntegerField(default=1) #maksimum misafir
 
     def is_available(self, check_in, check_out):
-        # Bu oda için belirtilen tarih aralığında yapılan rezervasyonları al
+        """
+        Odanın belirtilen tarihler arasında uygun olup olmadığını kontrol eder.
+        """
+        from reservations.models import Reservation
         overlapping_reservations = Reservation.objects.filter(
             room=self,
-            check_in__lt=check_out,  # Çıkış tarihinden önce giriş yapılmış
-            check_out__gt=check_in   # Giriş tarihinden sonra çıkış yapılmış
+            check_in__lt=check_out,  # Çıkış tarihi giriş tarihinden sonra olmalı
+            check_out__gt=check_in  # Giriş tarihi çıkış tarihinden önce olmalı
         )
-
-        # Mevcut rezervasyonların sayısını al
         reserved_rooms = overlapping_reservations.count()
-        # Kalan oda sayısını dön
-        return self.quantity - reserved_rooms
 
-    def __str__(self):
-        return self.name
-
-
-class Reservation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    check_in = models.DateField()
-    check_out = models.DateField()
-    guests = models.IntegerField()
-    special_requests = models.TextField(null=True, blank=True)
-
-    def clean(self):
-        if self.check_out <= self.check_in:
-            raise ValidationError("Çıkış tarihi, giriş tarihinden sonra olmalıdır.")
-
-        # Odanın uygun olup olmadığını kontrol et
-    def save(self, *args, **kwargs):
-
-        self.clean()
-
-        if not self.pk:  # Yeni rezervasyon
-            self.room.save()
-
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return f"{self.room.room_type} rezervasyonu ({self.check_in} - {self.check_out})"
-
+        # Eğer oda sayısından fazla rezervasyon yapılmışsa oda mevcut değildir.
+        return self.quantity > reserved_rooms
 
 class ContactInfo(models.Model):
     address = models.TextField()

@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d764da6-d3b7-4426-a149-9e62178df870" name="Changes" comment="feat: Added about_us and some updates">
+    <list default="true" id="2d764da6-d3b7-4426-a149-9e62178df870" name="Changes" comment="feat: Room quantity control">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/reservation_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/reservation_success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservations/templates/reservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/reservation_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservations/templates/reservation_success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/rooms.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/templates/hotel/rooms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/someotelwebsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/someotelwebsite/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/someotelwebsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/someotelwebsite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,31 +60,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.someotelwebsite.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.someotelwebsite.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Cevdet/Desktop/stajTechnArts/someotelwebsite",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Cevdet\Desktop\stajTechnArts\someotelwebsite\reservations\templates" />
       <recent name="C:\Users\Cevdet\Desktop\stajTechnArts\someotelwebsite" />
       <recent name="C:\Users\Cevdet\Desktop\stajTechnArts\someotelwebsite\hotel\templates\hotel" />
       <recent name="C:\Users\Cevdet\Desktop\stajTechnArts\someotelwebsite\hotel" />
       <recent name="C:\Users\Cevdet\Desktop\stajTechnArts\someotelwebsite\static\images" />
-      <recent name="C:\Users\Cevdet\Desktop\stajTechnArts\someotelwebsite\templates\hotel" />
     </key>
   </component>
   <component name="RunManager">
@@ -159,7 +165,16 @@
       <workItem from="1726834491393" duration="2103000" />
       <workItem from="1726928306348" duration="222000" />
       <workItem from="1727027079688" duration="2184000" />
-      <workItem from="1727076211423" duration="8845000" />
+      <workItem from="1727076211423" duration="15128000" />
+      <workItem from="1727096914609" duration="1686000" />
+      <workItem from="1727165603170" duration="2695000" />
+      <workItem from="1727168547030" duration="2351000" />
+      <workItem from="1727175559693" duration="187000" />
+      <workItem from="1727176057354" duration="1562000" />
+      <workItem from="1727339462800" duration="506000" />
+      <workItem from="1727340809802" duration="10644000" />
+      <workItem from="1727382229211" duration="7659000" />
+      <workItem from="1727422049069" duration="12064000" />
     </task>
     <task id="LOCAL-00001" summary="feat: upload">
       <option name="closed" value="true" />
@@ -225,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726823007463</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: Room quantity control">
+      <option name="closed" value="true" />
+      <created>1727089420099</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1727089420099</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +272,7 @@
     <MESSAGE value="feat: Added new features and made final updates" />
     <MESSAGE value="feat: Added new features" />
     <MESSAGE value="feat: Added about_us and some updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added about_us and some updates" />
+    <MESSAGE value="feat: Room quantity control" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Room quantity control" />
   </component>
 </project>

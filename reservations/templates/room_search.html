@@ -1,0 +1,24 @@
+<!-- room_search.html -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'room_search.css' %}">
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Oda Ara</button>
+</form>
+
+<h2>Uygun Odalar</h2>
+
+{% if available_rooms %}
+    <ul>
+        {% for room in available_rooms %}
+            <li>
+                {{ room.room_type }} - {{ room.max_occupancy }} kişilik
+                <a href="{% url 'reservation' room.id %}">Rezervasyon Yap</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Bu tarihlerde uygun oda bulunamadı.</p>
+{% endif %}

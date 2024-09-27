@@ -1,12 +1,13 @@
 from django.contrib import admin
-from .models import Room, Reservation, ContactInfo
+from .models import Room, ContactInfo
 from django.core.exceptions import ValidationError
+from reservations.models import Reservation
 
 
 class RoomAdmin(admin.ModelAdmin):
-    list_display = ('name', 'room_type', 'price_per_night', 'photo', 'quantity', 'description')  # Fotoğrafı ve açıklamayı listeye ekleyin
-    fields = ('name', 'room_type', 'description', 'price_per_night', 'photo', 'quantity')  # Fotoğrafı ve oda sayısını düzenleme formuna ekleyin
-    list_editable = ('quantity',)  # Oda sayısını düzenlenebilir yapın
+    list_display = ('name', 'room_type', 'price_per_night', 'photo', 'quantity', 'description','max_occupancy')  # Fotoğrafı ve açıklamayı listeye ekleyin
+    fields = ('name', 'room_type', 'description', 'price_per_night', 'photo', 'quantity', 'max_occupancy')  # Fotoğrafı ve oda sayısını düzenleme formuna ekleyin
+    list_editable = ('quantity', 'max_occupancy')  # Oda sayısını düzenlenebilir yapın
 
     def save_model(self, request, obj, form, change):
         if change:  # Mevcut bir oda güncelleniyorsa
@@ -21,10 +22,6 @@ class RoomAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
 admin.site.register(Room, RoomAdmin)
-
-@admin.register(Reservation)
-class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('user', 'room', 'check_in', 'check_out', 'guests', 'special_requests')  # Rezervasyon detaylarını listeye ekleyin
 
 @admin.register(ContactInfo)
 class ContactInfoAdmin(admin.ModelAdmin):

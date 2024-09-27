@@ -1,0 +1,16 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Rezervasyon{% endblock %}
+
+{% block content %}
+<div class="reservation-container">
+    <h2>Rezervasyon Yap</h2>
+
+    <form method="post" >
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Rezervasyon Yap</button>
+    </form>
+</div>
+{% endblock %}

@@ -31,8 +31,7 @@
                         <p><strong>Tür:</strong> {{ room.room_type }}</p>
                         <p><strong>Fiyat:</strong> {{ room.price_per_night }} TL/gece</p>
                         <p><strong>Açıklama:</strong> {{ room.description }}</p>
-                        <p><strong>Boş Oda:</strong> {{ room.quantity }}</p>
-                        <a href="{% url 'reservation' room.id %}" class="reserve-button">Rezervasyon Yap</a>
+                        <a href="{% url 'room_search' %}" class="reserve-button">Rezervasyon Yap</a>
                     </div>
                 </div>
             {% endfor %}
